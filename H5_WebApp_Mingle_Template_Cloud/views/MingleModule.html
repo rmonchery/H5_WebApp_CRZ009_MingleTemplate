@@ -1,0 +1,69 @@
+<form name="submitForm" novalidate>
+	<div id="MingleModule">
+		<div class="panel {{theme.panel}}">
+			<div class="panel-heading h5-cursor-pointer"
+				ng-model="modelobject.collapseUIGrid1"
+				ng-mousedown="modelobject.collapseUIGrid1=!modelobject.collapseUIGrid1">
+				<img class="h5-icon" ng-src="img/selection-icon.png"
+					title="{{::languageConstants.get('Heading')}}" alt="" />{{::languageConstants.get('Mingle
+				Template')}}
+			</div>
+
+			<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+					<td><h5>{{::languageConstants.get('From User:')}}</h5></td>
+
+				<input type="text" class="h5-input-md"
+					ng-model="MingleModule.MingleRecord.fromUserEmail"
+					name="fromUserEmail" title="fromUserEmail"
+					style="text-align: right" readonly>
+
+				<input type="hidden" class="h5-input-md"
+					ng-model="MingleModule.MingleRecord.fromUserGUID"
+					name="fromUserGUID" title="fromUserGUID" style="text-align: right"
+					readonly>
+			</tr>
+
+
+			<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+
+					<td><h5>{{::languageConstants.get('To User:')}}</h5></td>
+
+				<td><ui-select class="h5-input-md {{theme.h5Dropdown}}"
+						ng-model="MingleModule.user.selected" theme="bootstrap"
+						on-select="AppCtrl.updToUser($item.A121)"> <ui-select-match
+						placeholder="{{::languageConstants.get('Select User')}}">{{$select.selected.A130
+					+ ' - ' +$select.selected.PK02}}</ui-select-match> <ui-select-choices
+						repeat="user.PK02 as user in MingleModule.userGUIDList | filter: $select.search track by user.PK02">
+					<span ng-bind-html="user.PK02"| highlight: $select.search"></span>
+					- <small ng-bind-html="user.A130"| highlight: $select.search"></small></ui-select>
+				</td>
+			</tr>
+			<label form="submitForm">Mingle messages:</label>
+			<textarea class="form-control" rows="10" width="500"
+				ng-model="MingleModule.MingleRecord.messages" name="message"
+				title="messages" style="text-align: left" readonly>
+				{{MingleModule.MingleRecord.messages }} 
+
+ </textarea>
+			<input type="text" class="h5-input-md"
+				ng-model="MingleModule.MingleRecord.messageToSend"
+				name="messageToSend" title="messageToSend" style="text-align: right">
+
+			<button type="submit" class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.sendMessageToUser()">{{::languageConstants.get('Send
+				Message')}}</button>
+			<button type="submit" class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.getCollegueFeed()">{{::languageConstants.get('Get
+				Feed ')}}</button>
+
+			<!--  <button type="submit" class="h5Button {{theme.button}}" -->
+			<!-- 					ng-click="AppCtrl.loadColleagueList()">{{::languageConstants.get('Clear Messages')}}</button> -->
+			<button type="submit" class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.clearMessages()">{{::languageConstants.get('Clear
+				Messages')}}</button>
+
+
+
+		</div>
+	</div>
+</form>

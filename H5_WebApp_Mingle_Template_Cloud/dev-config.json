@@ -1,0 +1,45 @@
+{
+	"name": "Mingle Template - CRZ010",
+	"description": "Manager for ION API Connections",
+	"version": "4.1.0 - 1-BUILD-1/25/2019",
+	"environment": "DEMO",
+	"inforIONAPI": {
+		"URL": "https://mingle-sso.inforcloudsuite.com:443/TEKNORAPEXCOMPAN_TST/as/",
+		"grant_type": "password",
+		"username": "TEKNORAPEXCOMPAN_TST#z5ZAcqJdkZZI7jJPnMUybCBUeOKztRlODLng5PdFIgOq1XxYyOtnsglh8NMro6cu0Su_-T-GWRVcRz-X2amBBw",
+		"password": "7jKKpT3Dw9rkVS1ETrdBCzX-L87HX57tjCSdrI605cDT49FlmVKCNhpIwW4pRCv8DXv_EjdAitJ99zh0RMQ-zw",
+		"client_id": "TEKNORAPEXCOMPAN_TST~iU2AGq8R7grEszwHxS5wLXR_0s2E17G4AYnV07UX0qg",
+		"client_secret": "ZafFnrNKX6CK2derNItnMlaWhA9Hm4VMgX2gdjX8lRxML2aFGfWu3_ifOYp9cQzdYiVnneFLOqufLtaZEqHtiQ",
+		"access_token_url" : "token.oauth2",
+		"useSessionOAuth" : true,
+		"sessionOAuthURL" : "/grid/rest/security/sessions/oauth"			
+	},
+	"inforMingleAPI": {
+		"URL": "https://mingle-ionapi.inforcloudsuite.com/TEKNORAPEXCOMPAN_TST/Mingle"		
+	},
+	"inforIDMAPI": {
+		"URL": "https://<HostName>:7443/infor/IDM/api"
+	},
+	"inforM3API": {
+		"URL": "https://<HostName>:7443/infor/M3/M3/m3api-rest/v2/execute"
+	},
+	"defaultLanguage": "en-US",
+	"defaultThemeId": "1",
+	"defaultTextureId": "1",
+	"faviconURL": "img/favicon.png",
+	"appLogoURL": "img/leanswift-logo-nav.png",
+	"showThemeSelection": "true",
+	"showWallpaperSelection": "true",
+	"showLanguageSelection": "true",
+	"excludeThemes": [],
+	"excludeWallpapers": [],
+	"excludeLanguages": [],
+	"excludeModules": [],
+	"appConfig": {
+		"searchQuery": {
+			
+		},
+		"enableM3Authority": false,
+		"globalDateFormat": "MM/dd/yy"
+	}
+}
